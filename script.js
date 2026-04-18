@@ -5,7 +5,7 @@ const fontSelector = document.getElementById("fontSelector");
 const apiKey = "AIzaSyASmG4SJBhU15Ewh0JOR0YHyUhA2oKK7YU"; // Replace with your Google Fonts API key
 let allFonts = [];
 
-fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyASmG4SJBhU15Ewh0JOR0YHyUhA2oKK7YU&sort=style')
+fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=APIKEY&sort=style')
 //once you get the result from url -> get fonts sorted by style
   .then(res => res.json())
   .then(data => {
