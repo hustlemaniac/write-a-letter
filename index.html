@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Editor</title>
+
+<!--     html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<!--     css import -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+<!--         menu -->
+        <div class="menu">
+            <h2></h2>
+
+<!--             font dropdown -->
+            <div class="choose-font">
+                <button id="fontBtn">
+                    <select id="fontSelector" onchange="changeFont(this.value)">
+                        <!--                        dynamic options-->
+                    </select>
+                </button>
+            </div>
+
+
+
+<!--             menu buttons rows -->
+            <div class="button-row">
+<!--                bold-->
+                <button onclick="formatText('bold')"><b>B</b></button>
+<!--                italic-->
+                <button onclick="formatText('italic')"><i>I</i></button>
+            </div>
+            <div class="button-row">
+<!--                underline-->
+                <button onclick="formatText('underline')"><u>U</u></button>
+<!--                strikethrough-->
+                <button onclick="formatText('strikeThrough')"><s>S</s></button>
+            </div>
+            <div class="button-row">
+<!--                subscript-->
+                <button onclick="formatText('subscript')">x<sub>2</sub></button>
+<!--                superscript-->
+                <button onclick="formatText('superscript')">x<sup>2</sup></button>
+            </div>
+
+            <div class="button-row">
+<!--                text color -->
+                <button id="textColorBtn">Color<br>
+                    <input type="color" id="textColorPicker"></button>
+<!--                 text highlight -->
+                <button id="highlightBtn">Highlight<br>
+                    <input type="color" id="highlightPicker" value="white">
+                </button>
+            </div>
+
+            <div class="button-row">
+<!--                increase the text size-->
+                <button onclick="changeFontSize('increase')">A+</button>
+<!--                decrease the text size-->
+                <button onclick="changeFontSize('decrease')">A-</button>
+            </div>
+
+<!--            editor background-->
+            <button id="bgColorBtn">
+                <input type="color" id="bgColorPicker" style="width: 100%;" value="white"/>
+            </button>
+
+<!--            papaer style-->
+            <button id="pageLinesBtn" style="width: 100%;">
+                <select id="pageLinesSelector">
+                    <option value="unruled" selected>Un-ruled</option>
+                    <option value="ruled">Ruled</option>
+                </select>
+            </button>
+
+<!--             Bottom Buttons -->
+            <div class="bottom">
+                <button onclick="downloadPDF()">Download PDF</button>
+                <button onclick="mailLetter()">Mail Letter</button>
+            </div>
+        </div>
+
+<!--         type letter here -->
+        <div class="editor">
+            <div class="editor-area" id="editor" contenteditable="true">
+                Type your letter here...
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Made with love and a splitting headache</p>
+    </footer>
+
+<!-- link js file -->
+<script src="script.js"></script>
+</body>
+</html>

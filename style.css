@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+/* two sections in one colum - container and then footer */
+  display: flex;
+flex-direction: column;
+  height: 100vh;
+   /* prevent body scroll */
+  overflow: hidden;
+}
+
+/* section above footer */
+.container {
+  display: flex;
+  flex: 100; /* fills all available space above footer */
+  overflow: hidden;
+}
+
+/* menu */
+.menu {
+  width: 250px;
+/* background image settings */
+  background: url('itjojtjn.png');
+  background-size: contain;
+  background-filter: brightness(5);
+  /* default background */
+  background: black;
+/* we need all the items to be stacked - one column */
+  display: flex;
+  flex-direction: column;
+/* center alignment */
+  align-items: center;
+  padding: 20px 5px;
+
+}
+
+/* style the button and select inputs */
+.menu button, .menu select{
+
+      width: 100%;
+      margin: 5px 0;
+
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+ /* cusor as pointer */
+    cursor: pointer;
+/* border style */
+    border: 2px solid #ff2fd2;
+    border-radius: 15px;
+
+
+    transition: 0.25s ease;
+
+    box-shadow:
+        0 0 6px #ff2fd2,
+        0 0 12px #ff2fd2;
+    /* neon-ish text color */
+    text-shadow:
+        0 0 5px #ff2fd2,
+        0 0 10px #ff2fd2,
+        0 0 15px #ff2fd2;
+/* text color */
+    color: #ff2fd2;
+/* button color */
+    background: white;
+}
+
+/* apply button style on hover */
+.menu button:hover {
+
+    /* Neon halo for text */
+    text-shadow:
+        0 0 8px #ff2fd2,
+        0 0 15px #ff2fd2,
+        0 0 25px #ff2fd2;
+
+    background: transparent;
+
+    color: white;
+
+    /* Neon glow border */
+    box-shadow:
+        0 0 10px #ff2fd2,
+        0 0 20px #ff2fd2,
+        inset 0 0 5px #ff2fd2;
+
+/* increase the element size by 103% */
+    transform: scale(1.03);
+}
+
+.button-row {
+/* each row button elements, margin and space in between */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* bottom buttons need to be pushed down */
+.menu .bottom {
+  margin-top: auto;
+  width: 100%;
+}
+
+.editor {
+/* editor section to fill the full space*/
+  flex: 1;
+  background: black;
+   /* remove padding to avoid clipping scroll */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /* full height */
+  align-items: stretch;
+  /* prevent body scroll */
+  overflow: hidden;
+}
+
+/* actual window for letter */
+.editor-area {
+  width: min(80vw, 900px);    /* responsive width, capped at 900px */
+  height: 90%;               /* take full available height */
+  margin: 20px auto;
+  padding: 3vh 4vw;           /* inner padding for content */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* scroll only within editor area */
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ruled style */
+.editor-area.ruled {
+  background-color: #fff;
+  /* make lines */
+  background-image: linear-gradient(to bottom, black 1px, transparent 1px);
+  background-size: 100% 35px;
+  background-repeat: repeat-y;
+}
+
+
+footer {
+  background: #ff2fd2;
+  color: white;
+  text-align: center;
+  padding-bottom: 15px;
+  font-size: 14px;
+  /* bottom */
+  flex-shrink: 0;
+  height: 25px;
+}
+
